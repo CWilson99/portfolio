@@ -12,7 +12,7 @@ export default function Header() {
     ]
     const scrollDirection = useScrollDirection();
     return (
-      <div className={`flex flex-row items-center h-20 backdrop-blur-md bg-white/50 dark:bg-slate-950/50 shadow-md top-0 sticky transition-all duration-500 ${ scrollDirection === "down" ? "-top-20" : "top-0"}`}>
+      <div className={`flex flex-row items-center h-20 backdrop-blur-md bg-white/50 dark:bg-slate-950/50 shadow-md sticky transition-all duration-500 ${ scrollDirection === "down" ? "-top-20" : "top-0"}`}>
         <div className="flex-1 ps-8">
             <a className=" flex flex-row" href="">
             <Image
