@@ -1,0 +1,111 @@
+@use "sass:math";
+
+$triangleEdgeLengthCalc: 25; // Set the triangle edge length
+$triangleEdgeLength: 25px; // Set the triangle edge length
+$borderOverlapPercent: .95;
+$triangleTiltVar: 54; // 54 degrees is used for out tilt calculations. Trial and error for the right value
+$sqrtThree: math.sqrt(3);
+
+$triangleHeight: ($triangleEdgeLengthCalc * $sqrtThree) * 1px; // Calculate the height of the triangles
+$tilt: 52.62deg;// Calcs are super weird so hardcoding for now, calc is: math.asin(calc((math.tan($triangleTiltVar)/$sqrtThree)))
+$capOffset: -1.051 * $triangleEdgeLengthCalc;
+$verticalShift: ($capOffset + $triangleHeight / 2);
+
+// $tiltVarSecant: 1/math.cos($triangleTiltVar);
+$innerRadius: math.tan($triangleTiltVar) * $triangleEdgeLengthCalc;
+$outerRadius:  (1.701 * $triangleEdgeLengthCalc) * 1px;
+$sideTilt: 10.81deg; //(math.asin(($tiltVarSecant - math.tan($triangleTiltVar))));
+$sideHeight: $outerRadius;
+$verticalShift2: ($sideHeight + $triangleHeight - $verticalShift) ;
+
+.dice:hover {
+  animation: spin 16s infinite linear;
+}
+.dice {
+  position: relative;
+  width: $triangleEdgeLength * 2;
+  height: $triangleEdgeLength * 2;
+
+  transform-style: preserve-3d;
+
+  .dice-text {
+    position: absolute;
+    left: 0;
+    bottom: 50%;
+    transform-origin: 50% 0%;
+    transform:
+      translateY(#{$triangleHeight / 2 - 10})
+      rotateY(#{20 * 72deg})
+      // rotateZ(180deg)
+      translateX(14px)
+      translateZ($outerRadius - 7)
+      rotateX($sideTilt);
+  }
+
+  .side {
+    position: absolute;
+    left: 0;
+    bottom: 50%;
+    border-bottom: $triangleHeight solid;
+    border-left: $triangleEdgeLength solid transparent;
+    border-right: $triangleEdgeLength solid transparent;
+    transform-origin: 50% 0%;
+  }
+
+  .side:after {
+      content: '';
+      border-bottom: ($triangleHeight * $borderOverlapPercent) solid;
+      border-left: ($triangleEdgeLength * $borderOverlapPercent ) solid transparent;
+      border-right: ($triangleEdgeLength * $borderOverlapPercent) solid transparent;
+      position: absolute;
+      left: ($triangleEdgeLength  * $borderOverlapPercent) * -1;
+      top: $triangleEdgeLength - ($triangleEdgeLength  * $borderOverlapPercent);
+  }
+
+  @for $i from 1 through 5 { // Top cap.
+    $verticalShift2: $verticalShift;
+    .side:nth-child(#{$i}) {
+      transform:
+        translateY($verticalShift2)
+        rotateY(#{$i * 72deg})
+        rotateX($tilt);
+    }
+  }
+  @for $i from 6 through 10 { // Bottom cap.
+    .side:nth-child(#{$i}) {
+      transform:
+        translateY($verticalShift2)
+        rotateY(#{$i * 72deg + 36deg})
+        rotateX(#{180deg - $tilt});
+    }
+  }
+  @for $i from 11 through 15 { // Bottom wrap
+    .side:nth-child(#{$i}) {
+      transform:
+        translateY(#{$triangleHeight / 2})
+        rotateY(#{$i * 72deg + 36deg})
+        translateZ($outerRadius)
+        rotateX(-$sideTilt);
+    }
+  }
+  @for $i from 16 through 20 { // Top wrap
+    .side:nth-child(#{$i}) {
+      transform:
+        translateY(#{$triangleHeight / 2 + $sideHeight})
+        rotateY(#{$i * 72deg})
+        rotateZ(180deg)
+        translateZ($outerRadius)
+        rotateX(-$sideTilt);
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(720deg) rotateZ(1080deg);
+  }
+}
+

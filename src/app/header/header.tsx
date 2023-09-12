@@ -2,6 +2,7 @@
 import { useScrollDirection } from "@/hooks/useScrollDirection";
 import ThemeSwitcher from "./theme-switcher/theme-switcher"
 import Image from 'next/image'
+import Logo from "@/components/logo/logo";
 
 export default function Header() {
     const navs = [
@@ -12,17 +13,10 @@ export default function Header() {
     ]
     const scrollDirection = useScrollDirection();
     return (
-      <div className={`flex flex-row items-center h-20 backdrop-blur-md bg-white/50 dark:bg-slate-950/50 shadow-md sticky transition-all duration-500 ${ scrollDirection === "down" ? "-top-20" : "top-0"}`}>
+      <div className={`flex flex-row items-center h-32 backdrop-blur-md bg-white/50 dark:bg-slate-950/50 shadow-md sticky transition-all duration-500 ${ scrollDirection === "down" ? "-top-32" : "top-0"}`}>
         <div className="flex-1 ps-8">
             <a className=" flex flex-row" href="">
-            <Image
-              src="/logo_black_v2.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={64}
-              height={24}
-              priority
-            />
+                <Logo></Logo>
             </a>
         </div>
         <div className="flex w-100 justify-end pe-4">

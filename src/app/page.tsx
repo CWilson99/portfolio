@@ -1,4 +1,4 @@
-import Logo from '@/components/logo'
+import Logo from '@/components/logo/logo'
 import About from './about/about'
 import Contact from './contact/contact'
 import Experience from './experience/experience'
