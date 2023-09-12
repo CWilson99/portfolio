@@ -21,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css"></link>
 
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <main>
