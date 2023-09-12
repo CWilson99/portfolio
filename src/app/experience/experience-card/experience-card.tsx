@@ -12,7 +12,7 @@ export default function ExperienceCard({className, experience}: Props) {
     return (
         <div className={`flex flex-row ` + className}>
             <div className="w-2/12 relative">
-                <Image className={experience.company.companyLogo?.invert ? "dark:invert" : ""} src={experience.company.companyLogo.fileLocation} alt="Servian Logo"
+                <Image className={experience.company.companyLogo?.invert ? "dark:invert" : ""} src={experience.company.companyLogo.fileLocation} alt={`${experience.company.companyName} Logo`}
                 fill
                 style={{
                 objectFit: 'contain',

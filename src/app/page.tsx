@@ -1,3 +1,4 @@
+import Logo from '@/components/logo'
 import About from './about/about'
 import Contact from './contact/contact'
 import Experience from './experience/experience'
@@ -20,6 +21,9 @@ export default function Home() {
           </div>
           <div className='h-auto mt-16'>
             <Contact></Contact>
+          </div>
+          <div className='h-auto mt-16'>
+            <Logo></Logo>
           </div>
         </div>
         <div className='w-48'></div>

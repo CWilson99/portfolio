@@ -45,7 +45,7 @@ const previousExperience: Experience[] = [
       companyName: "Dropship Central",
       companyLogo: {
         invert: false,
-        fileLocation: "/dropship-logo.png",
+        fileLocation: "/dropship-logo.svg",
       },
     },
     position: {

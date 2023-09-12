@@ -16,14 +16,13 @@ export default function Header() {
         <div className="flex-1 ps-8">
             <a className=" flex flex-row" href="">
             <Image
-              src="/logo_black.svg"
+              src="/logo_black_v2.svg"
               alt="Vercel Logo"
               className="dark:invert"
-              width={100}
+              width={64}
               height={24}
               priority
             />
-            <span className="text-4xl leading-7 self-end text-sky-500 animate-blink">__</span>
             </a>
         </div>
         <div className="flex w-100 justify-end pe-4">
