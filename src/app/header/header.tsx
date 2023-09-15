@@ -13,12 +13,13 @@ export default function Header() {
     ]
     const scrollDirection = useScrollDirection();
     return (
-      <div className={`flex flex-row items-center h-32 backdrop-blur-md bg-white/50 dark:bg-slate-950/50 shadow-md sticky transition-all duration-500 ${ scrollDirection === "down" ? "-top-32" : "top-0"}`}>
-        <div className="flex-1 ps-8">
+      <div className={`flex flex-row items-center h-32 backdrop-blur-md bg-white/50 dark:bg-slate-950/50 shadow-md sticky transition-[top] duration-500 ${ scrollDirection === "down" ? "-top-32" : "top-0"}`}>
+        <div className="ps-8 shrink">
             <a className=" flex flex-row" href="">
                 <Logo></Logo>
             </a>
         </div>
+        <div className="flex grow"></div>
         <div className="flex w-100 justify-end pe-4">
             <ul className="flex flex-row">
                 {navs.map(nav => {

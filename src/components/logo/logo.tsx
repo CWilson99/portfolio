@@ -13,9 +13,11 @@ export default function Logo() {
         return content;
     }
     return (
-        <div className='dice'>
-            {generateDivs()}
-            <div className='dice-text text-3xl font-semibold'>C</div>
+        <div className='dice-wrapper text-6xl group'>
+            <div className='dice'>
+                {generateDivs()}
+            </div>
+            <div className='relative opacity-80 pointer-events-none font-semibold left-1 -top-14 transition-all duration-200 group-hover:text-7xl group-hover:left-0 group-hover:-top-[120%]'>C</div>
         </div>
     )
   }

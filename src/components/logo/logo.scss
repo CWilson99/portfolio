@@ -9,7 +9,7 @@ $sqrtThree: math.sqrt(3);
 $triangleHeight: ($triangleEdgeLengthCalc * $sqrtThree) * 1px; // Calculate the height of the triangles
 $tilt: 52.62deg;// Calcs are super weird so hardcoding for now, calc is: math.asin(calc((math.tan($triangleTiltVar)/$sqrtThree)))
 $capOffset: -1.051 * $triangleEdgeLengthCalc;
-$verticalShift: ($capOffset + $triangleHeight / 2);
+$verticalShift: ($capOffset + math.div($triangleHeight, 2));
 
 // $tiltVarSecant: 1/math.cos($triangleTiltVar);
 $innerRadius: math.tan($triangleTiltVar) * $triangleEdgeLengthCalc;
@@ -18,29 +18,47 @@ $sideTilt: 10.81deg; //(math.asin(($tiltVarSecant - math.tan($triangleTiltVar)))
 $sideHeight: $outerRadius;
 $verticalShift2: ($sideHeight + $triangleHeight - $verticalShift) ;
 
+@keyframes spin {
+  from {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  to {
+    transform: rotateX(360deg) rotateY(720deg) rotateZ(1080deg);
+  }
+}
+
+@keyframes reset {
+  from {
+    transform: rotateX(180deg) rotateY(180deg) rotateZ(180deg);
+  }
+  to {
+    transform: rotateX(0) rotateY(0) rotateZ(0);
+  }
+}
+
 .dice:hover {
   animation: spin 16s infinite linear;
 }
+
+.dice-wrapper{
+  width: $triangleEdgeLength * 2;
+  height: $triangleEdgeLength * 2;
+}
+
+.dice-text {
+  position: relative;
+  pointer-events: none;
+  left: 7%;
+  bottom: 110%;
+}
 .dice {
+  animation: reset 2s;
+
   position: relative;
   width: $triangleEdgeLength * 2;
   height: $triangleEdgeLength * 2;
 
   transform-style: preserve-3d;
-
-  .dice-text {
-    position: absolute;
-    left: 0;
-    bottom: 50%;
-    transform-origin: 50% 0%;
-    transform:
-      translateY(#{$triangleHeight / 2 - 10})
-      rotateY(#{20 * 72deg})
-      // rotateZ(180deg)
-      translateX(14px)
-      translateZ($outerRadius - 7)
-      rotateX($sideTilt);
-  }
 
   .side {
     position: absolute;
@@ -82,7 +100,7 @@ $verticalShift2: ($sideHeight + $triangleHeight - $verticalShift) ;
   @for $i from 11 through 15 { // Bottom wrap
     .side:nth-child(#{$i}) {
       transform:
-        translateY(#{$triangleHeight / 2})
+        translateY(#{math.div($triangleHeight, 2)})
         rotateY(#{$i * 72deg + 36deg})
         translateZ($outerRadius)
         rotateX(-$sideTilt);
@@ -91,21 +109,12 @@ $verticalShift2: ($sideHeight + $triangleHeight - $verticalShift) ;
   @for $i from 16 through 20 { // Top wrap
     .side:nth-child(#{$i}) {
       transform:
-        translateY(#{$triangleHeight / 2 + $sideHeight})
+        translateY(#{math.div($triangleHeight, 2) + $sideHeight})
         rotateY(#{$i * 72deg})
         rotateZ(180deg)
         translateZ($outerRadius)
         rotateX(-$sideTilt);
     }
-  }
-}
-
-@keyframes spin {
-  0% {
-    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-  }
-  100% {
-    transform: rotateX(360deg) rotateY(720deg) rotateZ(1080deg);
   }
 }
 

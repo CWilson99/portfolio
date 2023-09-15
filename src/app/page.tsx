@@ -22,9 +22,6 @@ export default function Home() {
           <div className='h-auto mt-16'>
             <Contact></Contact>
           </div>
-          <div className='h-auto mt-16'>
-            <Logo></Logo>
-          </div>
         </div>
         <div className='w-48'></div>
       </div>
