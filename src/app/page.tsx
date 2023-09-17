@@ -36,7 +36,7 @@ export default function Home() {
         <div className={`absolute left-[50%] top-[50%] animate-hide-logo`}><Logo allowHover={false}></Logo></div>
       </div>
       { !playAnimation &&
-        <div className='flex py-12'>
+        <div className='flex py-12 fade-up opacity-0 -translate-x-8' style={{animationDelay: "500ms"}}>
           <div className='w-48'></div>
           <div className='flex-1 flex flex-col'>
             <div className='flex h-screen items-center -mt-32'>
