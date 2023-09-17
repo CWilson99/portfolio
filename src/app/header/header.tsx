@@ -14,9 +14,9 @@ export default function Header() {
     const scrollDirection = useScrollDirection();
     return (
       <div className={`flex flex-row items-center h-32 backdrop-blur-md bg-white/50 dark:bg-slate-950/50 shadow-md sticky transition-[top] duration-500 ${ scrollDirection === "down" ? "-top-32" : "top-0"}`}>
-        <div className="ps-8 shrink">
+        <div className="shrink relative left-8 top-0">
             <a className=" flex flex-row" href="">
-                <Logo></Logo>
+                <Logo allowHover={true}></Logo>
             </a>
         </div>
         <div className="flex grow"></div>

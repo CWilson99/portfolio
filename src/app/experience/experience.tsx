@@ -63,6 +63,7 @@ const previousExperience: Experience[] = [
 export default function Experience() {
   return (
     <div id="experience">
+        <div>My Experience</div>
         {previousExperience.map(x => {
           return (
             <ExperienceCard className="mb-8 last:mb-0" key={x.company.companyName} experience={x}></ExperienceCard>
