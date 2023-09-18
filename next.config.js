@@ -11,6 +11,10 @@ const nextConfig = {
             }
         },
     },
+    images: {
+           domains: ['theconnorwilson.com'],
+           path: `/_next/image`
+       },
 }
 
 module.exports = nextConfig
