@@ -1,9 +1,9 @@
 import { Project } from "@/types/project"
 import Image from "next/image"
 import { FaGithub, FaUpRightFromSquare } from "react-icons/fa6"
-import portfolioImage from "../../../public/theconnorwilson-thumbnail.png"
-import golfBookerImage from "../../../public/golfbookerhelper-thumbnail.png"
-import dmDashboardImage from "../../../public/dmdashboard-thumbnail.png"
+import portfolioImage from "../../../static/theconnorwilson-thumbnail.png"
+import golfBookerImage from "../../../static/golfbookerhelper-thumbnail.png"
+import dmDashboardImage from "../../../static/dmdashboard-thumbnail.png"
 
 const projects: Project[] = [
     {
