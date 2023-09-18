@@ -4,7 +4,7 @@ type Props = {
     allowHover: boolean;
 }
 
-export default function Logo(props: Props) {
+export default function Logo({allowHover}: Props) {
     const numDivs: number = 20;
 
     function generateDivs() {
@@ -18,10 +18,10 @@ export default function Logo(props: Props) {
     }
     return (
         <div className='dice-wrapper text-6xl group'>
-            <div className='dice'>
+            <div className={`dice` + (allowHover === true ? ' dice-hover' : '')}>
                 {generateDivs()}
             </div>
-            <div className={`relative opacity-80 pointer-events-none font-semibold left-1 -top-14 transition-all duration-200` + (props.allowHover === true ? ' group-hover:text-7xl group-hover:left-0 group-hover:-top-[120%]' : '')}>C</div>
+            <div className={`relative opacity-80 pointer-events-none font-semibold left-1 -top-14 transition-all duration-200` + (allowHover === true ? ' group-hover:text-7xl group-hover:left-0 group-hover:-top-[120%]' : '')}>C</div>
         </div>
     )
   }

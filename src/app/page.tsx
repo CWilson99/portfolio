@@ -36,19 +36,34 @@ export default function Home() {
         <div className={`absolute left-[50%] top-[50%] animate-hide-logo`}><Logo allowHover={false}></Logo></div>
       </div>
       { !playAnimation &&
-        <div className='flex py-12 fade-up opacity-0 -translate-x-8' style={{animationDelay: "500ms"}}>
+        <div className='flex pb-12 fade-up opacity-0 -translate-x-8' style={{animationDelay: "500ms"}}>
           <div className='w-48'></div>
-          <div className='flex-1 flex flex-col'>
-            <div className='flex h-screen items-center -mt-32'>
+          <div className='relative flex-1 flex flex-col'>
+            <div className='flex h-[calc(100vh-128px)] items-center'>
               <About></About>
             </div>
-            <div className='h-auto mt-16'>
+            <div className='h-auto mt-16 flex flex-col justify-center'>
+              <div className="flex flex-row w-full justify-center pb-16 px-48">
+                <div className="border-t-[1px] border-sky-500/50 w-48 h-0 self-center"></div>
+                <div className="px-8 text-xl font-bold">{`Experience`}</div>
+                <div className="border-t-[1px] border-sky-500/50 w-48 h-0 self-center"></div>
+              </div>
               <Experience></Experience>
             </div>
-            <div className='h-auto mt-16'>
+            <div className='h-auto mt-48 flex flex-col justify-center'>
+              <div className="flex flex-row w-full justify-center pb-16 px-48">
+                <div className="border-t-[1px] border-sky-500/50 w-48 h-0 self-center"></div>
+                <div className="px-8 text-xl font-bold">{`Projects`}</div>
+                <div className="border-t-[1px] border-sky-500/50 w-48 h-0 self-center"></div>
+              </div>
               <Portfolio></Portfolio>
             </div>
-            <div className='h-auto mt-16'>
+            <div className='h-auto my-48'>
+              <div className="flex flex-row w-full justify-center pb-6 px-48">
+                <div className="border-t-[1px] border-sky-500/50 w-16 h-0 self-center"></div>
+                <div className="px-8 text-xl font-bold">{`Got Questions?`}</div>
+                <div className="border-t-[1px] border-sky-500/50 w-16 h-0 self-center"></div>
+              </div>
               <Contact></Contact>
             </div>
           </div>

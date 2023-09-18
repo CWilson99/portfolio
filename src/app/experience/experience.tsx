@@ -62,11 +62,10 @@ const previousExperience: Experience[] = [
 
 export default function Experience() {
   return (
-    <div id="experience">
-        <div>My Experience</div>
+    <div id="experience" className="flex flex-col w-[80%] self-center">
         {previousExperience.map(x => {
           return (
-            <ExperienceCard className="mb-8 last:mb-0" key={x.company.companyName} experience={x}></ExperienceCard>
+            <ExperienceCard className="mb-16 last:mb-0" key={x.company.companyName} experience={x}></ExperienceCard>
           )
         })}
     </div>

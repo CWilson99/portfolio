@@ -13,7 +13,7 @@ export default function Header() {
     ]
     const scrollDirection = useScrollDirection();
     return (
-      <div className={`flex flex-row items-center h-32 backdrop-blur-md bg-white/50 dark:bg-slate-950/50 shadow-md sticky transition-[top] duration-500 ${ scrollDirection === "down" ? "-top-32" : "top-0"}`}>
+      <div className={`flex flex-row z-50 items-center h-[128px] backdrop-blur-md bg-slate-50/50 dark:bg-slate-950/50 shadow-md sticky transition-[top] duration-500 ${ scrollDirection === "down" ? "-top-32" : "top-0"}`}>
         <div className="shrink relative left-8 top-0 fade-up opacity-0 -translate-x-8" style={{animationDelay: "3100ms"}}>
             <a className=" flex flex-row" href="">
                 <Logo allowHover={true}></Logo>
