@@ -1,9 +1,6 @@
 import { Project } from "@/types/project"
 import Image from "next/image"
 import { FaGithub, FaUpRightFromSquare } from "react-icons/fa6"
-import portfolioImage from "../../../static/theconnorwilson-thumbnail.png"
-import golfBookerImage from "../../../static/golfbookerhelper-thumbnail.png"
-import dmDashboardImage from "../../../static/dmdashboard-thumbnail.png"
 
 const projects: Project[] = [
     {
@@ -11,7 +8,7 @@ const projects: Project[] = [
         description: "My portfolio website, built by yours truly. Built using Next.js and Typescript, hosted as a Static Web App in Azure Cloud.",
         url: "theconnorwilson.com",
         repo: "https://github.com/CWilson99/portfolio",
-        image: portfolioImage,
+        image: "https://raw.githubusercontent.com/CWilson99/portfolio/main/static/theconnorwilson-thumbnail.png",
         tech: ["Next.js", "TypeScript", "Tailwind", "Azure"],
         wip: false
     },
@@ -20,14 +17,14 @@ const projects: Project[] = [
         description: "An application designed to simplify the booking process of public golf courses. Uses BeautifulSoup to scrape tee times from any golf course utilising the MiClub booking software.",
         url: "theconnorwilson.com",
         repo: "https://github.com/CWilson99/golf-booker",
-        image: golfBookerImage,
+        image: "https://raw.githubusercontent.com/CWilson99/portfolio/main/static/golfbookerhelper-thumbnail.png",
         tech: ["Next.js", "TypeScript", "Azure"],
         wip: true
     },
     {
         name: "DM Dashboard",
         description: "A web app designed to simplify the experience for a Dungeon Master. The dashboard displays information about all player characters, including health, armour class, stats and spell slots.",
-        image: dmDashboardImage,
+        image: "https://raw.githubusercontent.com/CWilson99/portfolio/main/static/dmdashboard-thumbnail.png",
         tech: ["React", "Webpack", "TypeScript", "Azure"],
         wip: true
     }
