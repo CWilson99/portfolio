@@ -1,34 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center"><img alt="Logo" src="https://raw.githubusercontent.com/CWilson99/portfolio/main/public/logo_black_v2.svg"/></div>
+<h1 align="center">theconnorwilson.com</h1>
+
+# theconnorwilson.com
+
+The repository for my personal website [theconnorwilson.com](http://theconnorwilson.com). Built with Next.js and hosted on Azure.
+
+![Website Screenshot](screenshot.png)
+
+Welcome to the repository for my personal website! This is the place where I share information about myself, showcase my projects, and connect with others in the digital world. Feel free to explore and learn more about me and what I do.
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Introduction
+
+This repository contains the source code and assets for my personal website. The website is a reflection of my interests, skills, and experiences. It's also a platform for me to share my thoughts through a blog and showcase my portfolio of projects.
+
+Visit my website: [https://www.yourwebsite.com](https://www.yourwebsite.com)
+
+## Features
+
+- **About Me:** Learn more about who I am, my background, and what I'm passionate about.
+- **Portfolio:** Explore a curated selection of my projects, complete with descriptions and links.
+- **Blog:** Read my latest articles and thoughts on various topics.
+- **Contact:** Get in touch with me through a contact form or connect with me on social media.
 
 ## Getting Started
 
-First, run the development server:
+To get a copy of this website up and running on your local machine, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. **Clone the Repository:**
