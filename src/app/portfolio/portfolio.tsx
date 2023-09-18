@@ -1,9 +1,7 @@
 import { Project } from "@/types/project"
 import Image from "next/image"
+import { ImageLoaderProps } from "next/image"
 import { FaGithub, FaUpRightFromSquare } from "react-icons/fa6"
-import portfolioImage from "../../../public/theconnorwilson-thumbnail.png"
-import golfBookerImage from "../../../public/golfbookerhelper-thumbnail.png"
-import dmDashboardImage from "../../../public/dmdashboard-thumbnail.png"
 
 const projects: Project[] = [
     {
@@ -11,7 +9,7 @@ const projects: Project[] = [
         description: "My portfolio website, built by yours truly. Built using Next.js and Typescript, hosted as a Static Web App in Azure Cloud.",
         url: "theconnorwilson.com",
         repo: "https://github.com/CWilson99/portfolio",
-        image: portfolioImage,
+        image: "/theconnorwilson-thumbnail.png",
         tech: ["Next.js", "TypeScript", "Tailwind", "Azure"],
         wip: false
     },
@@ -20,18 +18,23 @@ const projects: Project[] = [
         description: "An application designed to simplify the booking process of public golf courses. Uses BeautifulSoup to scrape tee times from any golf course utilising the MiClub booking software.",
         url: "theconnorwilson.com",
         repo: "https://github.com/CWilson99/golf-booker",
-        image: golfBookerImage,
+        image: "/golfbookerhelper-thumbnail.png",
         tech: ["Next.js", "TypeScript", "Azure"],
         wip: true
     },
     {
         name: "DM Dashboard",
         description: "A web app designed to simplify the experience for a Dungeon Master. The dashboard displays information about all player characters, including health, armour class, stats and spell slots.",
-        image: dmDashboardImage,
+        image: "dmdashboard-thumbnail.png",
         tech: ["React", "Webpack", "TypeScript", "Azure"],
         wip: true
     }
 ]
+
+const imageLoader = ({ src, width, quality }: ImageLoaderProps) => {
+    console.log(src)
+    return `https://theconnorwilson.com/${src}?w=${width}&q=${quality || 75}`
+  }
 
 export default function Portfolio() {
     return (
@@ -45,7 +48,7 @@ export default function Portfolio() {
                             <div className="flex flex-row me-4">
                                 <div className="flex relative items-center transition-all group-hover:scale-105">
                                     <div>
-                                        <Image className={`rounded` + (proj.wip ? ' blur-[4px]' : '')} src={proj.image} alt={proj.name + ` thumbnail`} width={600} height={400}></Image>
+                                        <Image loader={imageLoader} className={`rounded` + (proj.wip ? ' blur-[4px]' : '')} src={proj.image} alt={proj.name + ` thumbnail`} width={600} height={400}></Image>
                                     </div>
                                     { proj.wip &&
                                     <div className="absolute w-full backdrop-blur-sm py-2 text-4xl bg-slate-50/50 dark:bg-slate-950/50 flex justify-center">Work In Progress</div>

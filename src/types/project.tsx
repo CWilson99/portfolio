@@ -5,7 +5,7 @@ export type Project = {
     description: string;
     url?: string;
     repo?: string;
-    image: StaticImageData;
+    image: string;
     tech: string[];
     wip: boolean;
 }
