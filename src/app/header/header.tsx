@@ -24,8 +24,22 @@ export default function Header() {
         <div>
             <div className={`fixed w-screen top-0 bottom-0 z-[11] backdrop-blur ${navOpen ? "" : "hidden"}`} onClick={x => {toggleNav()}}>
             </div>
-            <div className={`absolute top-0 bottom-0 right-0 w-64 z-[12] transform-x-0 bg-slate-100 dark:bg-slate-950 navigation ${navOpen ? "slide-in" : "slide-out"}`}>
-
+            <div className={`absolute flex flex-col top-0 bottom-0 right-0 w-64 z-[12] transform-x-0 bg-slate-100 dark:bg-slate-950 navigation ${navOpen ? "slide-in" : "slide-out"}`}>
+                <div className="flex justify-end w-full cursor-pointer text-sky-500" onClick={x => {toggleNav()}}>
+                    <FaXmark className="me-6 mt-6" size={30}></FaXmark>
+                </div>
+                <ul className="flex flex-col items-center w-full pt-12">
+                    {navs.map(nav => {
+                        return (
+                            <li key={nav[1]} className="pb-12 last:pe-0 transition-all duration-500 hover:-translate-y-1 hover:text-sky-500">
+                                <a href={`#${nav[1]}`}>
+                                    {nav[0]}
+                                </a>
+                            </li>
+                        )
+                    })}
+                    <li className='flex items-center cursor-pointer'><ThemeSwitcher size={25}/></li>
+                </ul>
             </div>
             <div className={`flex flex-row z-10 items-center h-[80px] md:h-[128px] w-full backdrop-blur-md bg-slate-50/50 dark:bg-slate-950/50 shadow-md fixed transition-[top] duration-500 ${ scrollDirection === "down" ? "-top-32" : "top-0"}`}>
                 <div className="shrink relative left-8 top-0 fade-up opacity-0 -translate-x-8" style={{animationDelay: "3100ms"}}>
