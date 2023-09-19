@@ -42,7 +42,7 @@ export default function ExperienceCard({className, experience}: Props) {
                     <div className="pt-1 flex flex-row flex-wrap">
                         {experience.position.skills.map(x => {
                         return (
-                            <div key={x} className="bg-sky-500 px-2 py-1 me-2 last:me-0 font-medium rounded-full text-xs mb-2">
+                            <div key={x} className="bg-sky-500 px-2 py-1 me-2 last:me-0 font-medium text-slate-100 rounded-full text-xs mb-2">
                                 {x}
                             </div>
                         )
