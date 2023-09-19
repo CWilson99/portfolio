@@ -24,7 +24,7 @@ export default function Header() {
         <div>
             <div className={`fixed w-screen top-0 bottom-0 z-[11] backdrop-blur ${navOpen ? "" : "hidden"}`} onClick={x => {toggleNav()}}>
             </div>
-            <div className={`absolute flex flex-col top-0 bottom-0 right-0 w-64 z-[12] transform-x-0 bg-slate-100 dark:bg-slate-950 navigation ${navOpen ? "slide-in" : "slide-out"}`}>
+            <div className={`fixed flex flex-col top-0 bottom-0 right-0 w-64 z-[12] transform-x-0 bg-slate-100 dark:bg-slate-950 navigation ${navOpen ? "slide-in" : "slide-out"}`}>
                 <div className="flex justify-end w-full cursor-pointer text-sky-500" onClick={x => {toggleNav()}}>
                     <FaXmark className="me-6 mt-6" size={30}></FaXmark>
                 </div>
@@ -32,7 +32,7 @@ export default function Header() {
                     {navs.map(nav => {
                         return (
                             <li key={nav[1]} className="pb-12 last:pe-0 transition-all duration-500 hover:-translate-y-1 hover:text-sky-500">
-                                <a href={`#${nav[1]}`}>
+                                <a href={`#${nav[1]}`} onClick={x => {toggleNav()}}>
                                     {nav[0]}
                                 </a>
                             </li>
