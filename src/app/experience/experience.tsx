@@ -13,7 +13,7 @@ const previousExperience: Experience[] = [
     },
     position: {
       duration: {
-        from: "February 2022",
+        from: "Feb 2022",
         to: "Current"
       },
       positionTitle: "Consultant",
@@ -32,8 +32,8 @@ const previousExperience: Experience[] = [
     },
     position: {
       duration: {
-        from: "January 2021",
-        to: "November 2021"
+        from: "Jan",
+        to: "Nov 2021"
       },
       positionTitle: "Software Developer",
       positionDescription: "I spearheaded the development of a robust back-end reporting system, transforming data from a Software as a Service (SaaS) platform into insightful visual representations. Working in tandem with a team comprising four interns and seasoned professionals, I played a pivotal role in constructing a crucial module within a larger SaaS ecosystem. One of my notable achievements was the design and implementation of a dynamic visual SQL query builder, capable of seamlessly interacting with any SQLAlchemy model.",
@@ -51,7 +51,7 @@ const previousExperience: Experience[] = [
     position: {
       duration: {
         from: "July 2019",
-        to: "January 2022"
+        to: "Jan 2022"
       },
       positionTitle: "Software Developer",
       positionDescription: "In collaboration with company directors, I played a pivotal role in architecting and developing a tailored ERP system specifically designed for the IT retail sector. My focus was on creating efficient, high-performance code aimed at enhancing business productivity and steering away from legacy systems. I successfully managed vast volumes of product records, necessitating frequent updates across multiple database tables. My contributions extended beyond ERP development, with over 1200+ commits across diverse projects within Dropship Central.",
@@ -62,10 +62,10 @@ const previousExperience: Experience[] = [
 
 export default function Experience() {
   return (
-    <div id="experience" className="flex flex-col w-[80%] self-center">
+    <div id="experience" className="flex flex-col w-full md:w-[80%] self-center">
         {previousExperience.map(x => {
           return (
-            <ExperienceCard className="mb-16 last:mb-0" key={x.company.companyName} experience={x}></ExperienceCard>
+            <ExperienceCard className="mb-8 md:mb-16 last:mb-0" key={x.company.companyName} experience={x}></ExperienceCard>
           )
         })}
     </div>

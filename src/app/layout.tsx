@@ -1,10 +1,10 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import Splash from '@/components/splash'
 import Header from './header/header'
 import { ThemeProvider } from './theme-provider'
 import Socials from '@/components/socials'
+import Footer from './footer/footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,14 +20,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`h-full overflow-x-hidden ${inter.className}`}>
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css"></link>
 
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <main>
-            <Header></Header>
-            <Socials></Socials>
+            <div className='hidden md:inline'><Socials></Socials></div>
             {children}
+            <Footer></Footer>
           </main>
         </ThemeProvider>
       </body>

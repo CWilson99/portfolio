@@ -4,7 +4,11 @@ import { useTheme } from "next-themes";
 
 import { FaCircleHalfStroke } from 'react-icons/fa6';
 
-export default function ThemeSwitcher() {
+type Props = {
+  size?: number;
+}
+
+export default function ThemeSwitcher({size}: Props) {
     const [mounted, setMounted] = useState(false);
     const { theme, setTheme } = useTheme();
 
@@ -24,7 +28,7 @@ export default function ThemeSwitcher() {
     }
 
     return (
-        <FaCircleHalfStroke className="cursor-pointer" onClick={() => {
+        <FaCircleHalfStroke className="cursor-pointer" size={size ? size : 16} onClick={() => {
                 checkTheme();
                 setTheme(theme === "dark" ? "light" : "dark")
                 }

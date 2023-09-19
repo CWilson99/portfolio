@@ -38,14 +38,14 @@ const imageLoader = ({ src, width, quality }: ImageLoaderProps) => {
 
 export default function Portfolio() {
     return (
-        <ul id="portfolio" className="flex flex-col self-center items-center w-[80%]">
+        <ul id="portfolio" className="flex flex-col self-center items-center w-[90%] md:w-[80%]">
             {
                 projects.map(proj => {
                     return (
-                        <li key={proj.name} className="flex flex-row relative items-center mb-24 group">
-                            <div className="absolute -z-50 h-[120%] -top-[10%] w-0 bg-slate-100/50 dark:bg-slate-950/50 rounded border-sky-500 left-[50%] transition-[width left] duration-300 group-hover:w-[105%] group-hover:border group-hover:-left-10">
+                        <li key={proj.name} className="flex flex-row relative items-center mb-8 md:mb-24 group m-2 w-full">
+                            <div className="absolute -z-[8] h-[120%] -top-[10%] w-0 md:bg-slate-100/50 md:dark:bg-slate-950/50 rounded border-sky-500 left-[50%] transition-[width left] duration-300 group-hover:w-[105%] md:group-hover:border group-hover:-left-10">
                             </div>
-                            <div className="flex flex-row me-4">
+                            <div className="flex flex-row me-4 hidden md:inline">
                                 <div className="flex relative items-center transition-all group-hover:scale-105">
                                     <div>
                                         <Image loader={imageLoader} className={`rounded` + (proj.wip ? ' blur-[4px]' : '')} src={proj.image} alt={proj.name + ` thumbnail`} width={600} height={400}></Image>
@@ -55,25 +55,25 @@ export default function Portfolio() {
                                     }
                                 </div>
                             </div>
-                            <div className="flex flex-col ps-4">
-                                <div className="pb-8 text-2xl font-semibold">{proj.name}</div>
-                                <div className="bg-slate-100 dark:bg-slate-950/50 z-20 p-4 w-[40rem] place-self-center">{proj.description}</div>
-                                <div className="flex flex-row">
+                            <div className="flex flex-col ps-4 p-8 bg-slate-100 dark:bg-slate-950/50 md:bg-transparent md:dark:bg-transparent w-full rounded">
+                                <div className="px-4 pb-4 md:px-0 md:pb-8 text-2xl font-semibold">{proj.name}</div>
+                                <div className="md:bg-slate-100 md:dark:bg-slate-950/50 z-[1] p-4 w-full md:w-[40rem] place-self-center">{proj.description}</div>
+                                <div className="flex flex-row flex-wrap px-4 md:px-0">
                                 {proj.tech.map(t => {
                                     return (
-                                        <div key={t} className="m-2 text-sky-500 font-mono text-sm">{t}</div>
+                                        <div key={t} className="md:my-2 me-2 text-sky-500 font-mono text-sm">{t}</div>
                                     )
                                 })}
                                 </div>
-                                <div className="flex flex-row">
+                                <div className="flex flex-row mt-2 md:m-0 px-4 md:px-0">
                                     {proj.repo &&
                                         <div>
-                                            <a target="_blank" href={proj.repo}><FaGithub className="m-2 cursor-pointer transition-all duration-500 hover:-translate-y-1 hover:text-sky-500"size={18}/></a>
+                                            <a target="_blank" href={proj.repo}><FaGithub className="my-2 me-4 md:me-2 cursor-pointer transition-all duration-500 hover:-translate-y-1 hover:text-sky-500 scale-125 md:scale-100" size={18}/></a>
                                         </div>
                                     }
                                     {proj.url &&
                                         <div>
-                                            <a target="_blank" href={proj.url}><FaUpRightFromSquare className={"my-2 cursor-pointer transition-all duration-500 hover:-translate-y-1 hover:text-sky-500" + (!proj.repo ? ' ms-2' : '')} size={18}/></a>
+                                            <a target="_blank" href={proj.url}><FaUpRightFromSquare className={"my-2 cursor-pointer transition-all duration-500 hover:-translate-y-1 hover:text-sky-500 scale-125 md:scale-100" + (!proj.repo ? ' ms-2' : '')} size={18}/></a>
                                         </div>
                                     }
                                 </div>
