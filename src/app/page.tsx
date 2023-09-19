@@ -35,7 +35,7 @@ export default function Home() {
     <main>
       <Header></Header>
       <div className="absolute left-0 top-0 w-full h-full shadow-md bg-slate-100 dark:bg-slate-950 z-20 animate-hide-splash">
-        <div className={`absolute left-[50%] top-[50%] animate-hide-logo`}><Logo allowHover={false}></Logo></div>
+        <div className={`absolute left-[calc(50%-25px)] top-[calc(50%-25px)] animate-hide-logo`}><Logo allowHover={false}></Logo></div>
       </div>
       { !playAnimation &&
         <div className={'flex flex-row pt-[80px] md:pt-[128px] pb-12 fade-up opacity-0 -translate-x-8 md:justify-center'} style={{animationDelay: "500ms"}}>

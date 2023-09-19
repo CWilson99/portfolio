@@ -27,7 +27,7 @@ export default function RootLayout({
           <main>
             <div className='hidden md:inline'><Socials></Socials></div>
             {children}
-            <Footer></Footer>
+            <div className='opacity-0 fade-up' style={{animationDelay: "3500ms"}}><Footer></Footer></div>
           </main>
         </ThemeProvider>
       </body>

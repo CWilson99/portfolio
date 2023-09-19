@@ -62,7 +62,7 @@ export default function Header() {
                         <li className='flex items-center cursor-pointer'><ThemeSwitcher/></li>
                     </ul>
                 </div>
-                <div className="md:hidden pe-8 text-sky-500 cursor-pointer" onClick={x => {toggleNav()}}>
+                <div className="md:hidden pe-8 text-sky-500 cursor-pointer opacity-0 fade-up" style={{animationDelay: "3300ms"}} onClick={x => {toggleNav()}}>
                     <FaBars size={24} />
                 </div>
             </div>
