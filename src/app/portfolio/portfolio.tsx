@@ -7,7 +7,7 @@ const projects: Project[] = [
     {
         name: "theconnorwilson.com",
         description: "My portfolio website, built by yours truly. Built using Next.js and Typescript, hosted as a Static Web App in Azure Cloud.",
-        url: "theconnorwilson.com",
+        url: "https://theconnorwilson.com",
         repo: "https://github.com/CWilson99/portfolio",
         image: "/theconnorwilson-thumbnail.png",
         tech: ["Next.js", "TypeScript", "Tailwind", "Azure"],
@@ -16,7 +16,7 @@ const projects: Project[] = [
     {
         name: "Golf Booker",
         description: "An application designed to simplify the booking process of public golf courses. Uses BeautifulSoup to scrape tee times from any golf course utilising the MiClub booking software.",
-        url: "theconnorwilson.com",
+        // url: "https://golfbookerhelper.theconnorwilson.com",
         repo: "https://github.com/CWilson99/golf-booker",
         image: "/golfbookerhelper-thumbnail.png",
         tech: ["Next.js", "TypeScript", "Azure"],
